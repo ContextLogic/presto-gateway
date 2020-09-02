@@ -271,6 +271,17 @@ To delete a global property, specify the corresponding name (type String).
 curl -X POST http://localhost:8080/presto/globalproperty/delete/{INSERT_NAME_HERE}
 ```
 
+# Build presto-gateway docker image
+Under presto-gateway directory
+### Build presto-gateway 
+```
+1. docker build -t wish/presto-gateway:182 ./
+2. docker tag wish/presto-gateway:182 343388184567.dkr.ecr.us-west-2.amazonaws.com/wish/presto-gateway:latest
+3. aws ecr get-login --no-include-email --region us-west-2 --profile docker
+4. docker push 343388184567.dkr.ecr.us-west-2.amazonaws.com/wish/presto-gateway:latest
+```
+
+
 ## Contributing
 
 Want to help build Presto Gateway? Check out our [contributing documentation](CONTRIBUTING.md)
